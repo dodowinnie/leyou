@@ -18,6 +18,10 @@
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>com.brandon.leyou.common</groupId>
+            <artifactId>ly-common</artifactId>
+        </dependency>
 
     </dependencies>
 
