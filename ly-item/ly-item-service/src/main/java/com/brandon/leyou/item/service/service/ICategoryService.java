@@ -7,18 +7,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class CategoryService {
-
-    @Autowired
-    private CategoryMapper categoryMapper;
+public interface ICategoryService {
 
 
-    public List<Category> getCategoryListByParentId(Long id){
-        Category record = new Category();
-        record.setParentId(id);
-        return categoryMapper.select(record);
-    }
+    public List<Category> getCategoryListByParentId(Long id);
 
+    List<Category> queryByBrandId(Long bid);
 
 }
