@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements ICategoryService {
@@ -25,5 +26,11 @@ public class CategoryServiceImpl implements ICategoryService {
     public List<Category> queryByBrandId(Long bid) {
         List<Category> categories = categoryMapper.queryByBrandId(bid);
         return categories;
+    }
+
+    @Override
+    public List<String> queryNamesByIds(List<Long> ids) {
+        List<String> names = categoryMapper.selectByIdList(ids).stream().map(Category::getName).collect(Collectors.toList());
+        return names;
     }
 }

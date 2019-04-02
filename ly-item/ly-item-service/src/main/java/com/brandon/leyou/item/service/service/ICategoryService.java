@@ -14,4 +14,6 @@ public interface ICategoryService {
 
     List<Category> queryByBrandId(Long bid);
 
+    List<String> queryNamesByIds(List<Long> ids);
+
 }
